@@ -11,6 +11,8 @@ namespace GameProject3.Movements
         {
             _characterController = playerController.GetComponent<CharacterController>();
         }
+
+
         public void MoveAction(Vector3 direction, float moveSpeed)
         {
             if (direction.magnitude == 0f) return;
