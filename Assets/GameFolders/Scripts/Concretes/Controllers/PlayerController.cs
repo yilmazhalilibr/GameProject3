@@ -1,5 +1,6 @@
 using GameProject3.Abstracts.Inputs;
 using GameProject3.Abstracts.Movements;
+using GameProject3.Animations;
 using GameProject3.Movements;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ namespace GameProject3.Controllers
 
         Vector3 _direction;
 
+        CharacterAnimation _animation;
 
 
 
@@ -23,6 +25,7 @@ namespace GameProject3.Controllers
         {
             _input = GetComponent<IInputReader>();
             _mover = new MoveWithCharacterController(this);
+            _animation = new CharacterAnimation(this);
         }
 
         private void Update()
