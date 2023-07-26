@@ -1,18 +1,27 @@
+using GameProject3.Abstracts.Inputs;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+namespace GameProject3.Controllers
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerController : MonoBehaviour
     {
-        
+        IInputReader _input;
+
+        private void Awake()
+        {
+            _input = GetComponent<IInputReader>();
+        }
+
+        private void Update()
+        {
+
+        }
+
+
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
+
