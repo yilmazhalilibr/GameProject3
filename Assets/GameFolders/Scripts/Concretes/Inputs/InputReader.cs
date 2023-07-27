@@ -9,6 +9,8 @@ namespace GameProject3.Inputs
         public Vector3 Direction { get; private set; }
         public Vector2 Rotation { get; private set; }
 
+        public bool isAttackButtonPress { get; private set; }
+
         public void OnMove(InputAction.CallbackContext context)
         {
             var OldDirection = context.ReadValue<Vector2>();
@@ -20,6 +22,10 @@ namespace GameProject3.Inputs
             Rotation = context.ReadValue<Vector2>();
         }
 
+        public void OnAttack(InputAction.CallbackContext context)
+        {
+            isAttackButtonPress = context.ReadValueAsButton();
+        }
 
     }
 }
