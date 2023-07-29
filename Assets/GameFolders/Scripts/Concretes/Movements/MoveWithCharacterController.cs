@@ -1,3 +1,4 @@
+using GameProject3.Abstracts.Controllers;
 using GameProject3.Abstracts.Movements;
 using GameProject3.Controllers;
 using UnityEngine;
@@ -7,9 +8,9 @@ namespace GameProject3.Movements
     public class MoveWithCharacterController : IMover
     {
         CharacterController _characterController;
-        public MoveWithCharacterController(PlayerController playerController)
+        public MoveWithCharacterController(IEntityController entityController)
         {
-            _characterController = playerController.GetComponent<CharacterController>();
+            _characterController = entityController.transform.GetComponent<CharacterController>();
         }
 
 

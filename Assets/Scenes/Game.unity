@@ -108,7 +108,7 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 45
+    agentSlope: 48.1
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 69f010125d03b8c409b1b0fa982d3c62, type: 2}
 --- !u!1 &16742056
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +206,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 14.67, y: 0, z: 0}
+--- !u!4 &935262860 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3619120937664575293, guid: b9e10e32942239349aeb4095de76a58c, type: 3}
+  m_PrefabInstance: {fileID: 716765504259878688}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1599407156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -267,23 +272,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3d707c29a2415740953c579b3cdc855, type: 3}
---- !u!1 &2017852935 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1952944874769397793, guid: b9e10e32942239349aeb4095de76a58c, type: 3}
-  m_PrefabInstance: {fileID: 716765504259878688}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2017852944
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017852935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &439089790795309746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -361,10 +349,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2893705532177180301, guid: b9e10e32942239349aeb4095de76a58c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3619120937664575293, guid: b9e10e32942239349aeb4095de76a58c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -409,26 +393,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5413338792162890663, guid: b9e10e32942239349aeb4095de76a58c, type: 3}
-      propertyPath: Damping.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5413338792162890663, guid: b9e10e32942239349aeb4095de76a58c, type: 3}
-      propertyPath: Damping.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5413338792162890663, guid: b9e10e32942239349aeb4095de76a58c, type: 3}
-      propertyPath: Damping.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8650223089160868614, guid: b9e10e32942239349aeb4095de76a58c, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1952944874769397793, guid: b9e10e32942239349aeb4095de76a58c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2017852944}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9e10e32942239349aeb4095de76a58c, type: 3}
 --- !u!108 &7775944981823825216 stripped
 Light:
@@ -461,7 +429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6777103227717698318, guid: 2b8416371f3038a42a53d708ac460fcc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -7.96
       objectReference: {fileID: 0}
     - target: {fileID: 6777103227717698318, guid: 2b8416371f3038a42a53d708ac460fcc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -491,10 +459,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7107030730646873467, guid: 2b8416371f3038a42a53d708ac460fcc, type: 3}
-      propertyPath: m_AgentTypeID
-      value: -1923039037
-      objectReference: {fileID: 0}
+    - target: {fileID: 8017033630103557004, guid: 2b8416371f3038a42a53d708ac460fcc, type: 3}
+      propertyPath: _playerPrefab
+      value: 
+      objectReference: {fileID: 935262860}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
