@@ -1,9 +1,11 @@
 using GameProject3.Abstracts.Controllers;
 using GameProject3.Abstracts.Movements;
+using GameProject3.Animations;
 using GameProject3.Movements;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace GameProject3.Controllers
 {
@@ -13,9 +15,14 @@ namespace GameProject3.Controllers
 
         IMover _mover;
 
+        CharacterAnimation _animation;
+        NavMeshAgent _navMeshAgent;
+
         private void Awake()
         {
             _mover = new MoveWithNavMesh(this);
+            _animation = new CharacterAnimation(this);
+            _navMeshAgent = GetComponent<NavMeshAgent>();
         }
 
         private void Update()
@@ -23,7 +30,11 @@ namespace GameProject3.Controllers
             _mover.MoveAction(_playerPrefab.transform.position, 10f);
         }
 
+        private void LateUpdate()
+        {
+            _animation.MoveAnimation(_navMeshAgent.velocity.magnitude);
 
+        }
     }
 
 }
