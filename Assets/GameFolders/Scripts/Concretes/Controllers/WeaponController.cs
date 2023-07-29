@@ -1,3 +1,4 @@
+using GameProject3.Abstracts.Combats;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ namespace GameProject3.Controllers
 {
     public class WeaponController : MonoBehaviour
     {
+        [SerializeField] int _damage = 10;
         [SerializeField] bool _canFire;
         [SerializeField] float _attackMaxDelay = 0.025f;
         [SerializeField] float _distance = 100f;
@@ -32,13 +34,19 @@ namespace GameProject3.Controllers
 
             if (Physics.Raycast(ray, out RaycastHit hit, _distance, _layerMask))
             {
-                Debug.Log(hit.collider.gameObject.name);
+
+                if (hit.collider.TryGetComponent(out IHealth health))
+                {
+                    health.TakeDamage(_damage);
+                }
+
+
             }
 
             _currentTime = 0f;
         }
 
-       
+
 
 
 

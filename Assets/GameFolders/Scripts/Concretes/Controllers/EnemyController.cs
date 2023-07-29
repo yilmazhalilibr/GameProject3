@@ -1,3 +1,4 @@
+using GameProject3.Abstracts.Combats;
 using GameProject3.Abstracts.Controllers;
 using GameProject3.Abstracts.Movements;
 using GameProject3.Animations;
@@ -14,7 +15,7 @@ namespace GameProject3.Controllers
         [SerializeField] Transform _playerPrefab;
 
         IMover _mover;
-
+        IHealth _health;
         CharacterAnimation _animation;
         NavMeshAgent _navMeshAgent;
 
@@ -23,10 +24,13 @@ namespace GameProject3.Controllers
             _mover = new MoveWithNavMesh(this);
             _animation = new CharacterAnimation(this);
             _navMeshAgent = GetComponent<NavMeshAgent>();
+            _health = GetComponent<IHealth>();
         }
 
         private void Update()
         {
+            if (_health.isDead) return;
+
             _mover.MoveAction(_playerPrefab.transform.position, 10f);
         }
 
