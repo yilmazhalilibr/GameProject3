@@ -245,11 +245,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3625346928290271734, guid: b9e10e32942239349aeb4095de76a58c, type: 3}
+      propertyPath: _attackSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 3c72e95d9e42a3641b65a4cb5857c62c, type: 2}
+    - target: {fileID: 3625346928290271734, guid: b9e10e32942239349aeb4095de76a58c, type: 3}
+      propertyPath: _attackMaxDelay
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625346928290271734, guid: b9e10e32942239349aeb4095de76a58c, type: 3}
+      propertyPath: _transformObject
+      value: 
+      objectReference: {fileID: 716765504259878689}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9e10e32942239349aeb4095de76a58c, type: 3}
+--- !u!4 &716765504259878689 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8888553835855617208, guid: b9e10e32942239349aeb4095de76a58c, type: 3}
+  m_PrefabInstance: {fileID: 716765504259878688}
+  m_PrefabAsset: {fileID: 0}
 --- !u!108 &7775944981823825216 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 1207031519485800563, guid: ae9d79645c0918945a4f2122a5e952c8, type: 3}
