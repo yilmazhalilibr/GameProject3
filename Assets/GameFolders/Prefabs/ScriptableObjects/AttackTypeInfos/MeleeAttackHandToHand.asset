@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bb0149cfb8f2fb418518628aeb6999f, type: 3}
-  m_Name: RangeAttackType
+  m_Name: MeleeAttackHandToHand
   m_EditorClassIdentifier: 
-  _floatValue: 10
-  _damage: 100
+  _floatValue: 0.25
+  _damage: 1
   _layerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  _attackMaxDelay: 0.25
