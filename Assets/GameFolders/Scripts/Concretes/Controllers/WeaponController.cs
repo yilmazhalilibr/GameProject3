@@ -19,6 +19,7 @@ namespace GameProject3.Controllers
 
         IAttackType _attackType;
 
+        public AttackSO AttackSo => _attackSO;
 
 
         private void Awake()

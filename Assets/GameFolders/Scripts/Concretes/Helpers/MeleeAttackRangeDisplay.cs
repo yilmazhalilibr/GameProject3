@@ -16,7 +16,7 @@ namespace GameProject3.Helpers
         {
             Gizmos.color = Color.red;
 
-            Gizmos.DrawSphere(this.transform.position,_attackSo.FloatValue );
+            Gizmos.DrawWireSphere(this.transform.position,_attackSo.FloatValue );
         }
     }
 }

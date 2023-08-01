@@ -13,7 +13,6 @@ namespace GameProject3.Controllers
         [SerializeField] float _moveSpeed = 10f;
         [SerializeField] float _turnSpeed = 10f;
         [SerializeField] Transform _turnTransform;
-        [SerializeField] WeaponController _currentWeapon;
 
 
         IInputReader _input;
@@ -44,7 +43,12 @@ namespace GameProject3.Controllers
             _yRotator.RotationAction(_input.Rotation.y, _turnSpeed);
             //Debug.Log(_input.Rotation.y);
 
-            if (_input.isAttackButtonPress) { _currentWeapon.Attack(); }
+            if (_input.isAttackButtonPress) 
+            {
+                /*_currentWeapon.Attack();*/ 
+
+
+            }
         }
 
         private void FixedUpdate()
