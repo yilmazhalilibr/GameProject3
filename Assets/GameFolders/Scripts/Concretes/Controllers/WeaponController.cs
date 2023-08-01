@@ -23,7 +23,7 @@ namespace GameProject3.Controllers
 
         private void Awake()
         {
-            _attackType = new RangeAttackType(_transformObject.transform, _attackSO);
+            _attackType = _attackSO.GetAttackType(_transformObject);
         }
         private void Update()
         {

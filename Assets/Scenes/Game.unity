@@ -247,7 +247,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2019901345}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.942, z: 1.028}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -266,6 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b62ffaf691dc040b2344fdf1499208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _attackSo: {fileID: 11400000, guid: a0654f4e4c79b804fa2ca44a99604921, type: 2}
 --- !u!1001 &439089790795309746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -335,6 +336,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1491750090188177557, guid: b9e10e32942239349aeb4095de76a58c, type: 3}
+      propertyPath: _currentWeapon
+      value: 
+      objectReference: {fileID: 1066354289}
     - target: {fileID: 2684627698688782038, guid: b9e10e32942239349aeb4095de76a58c, type: 3}
       propertyPath: m_Name
       value: Weapon1
