@@ -3,6 +3,8 @@ using GameProject3.Abstracts.Controllers;
 using GameProject3.Abstracts.Movements;
 using GameProject3.Animations;
 using GameProject3.Movements;
+using GameProject3.States;
+using GameProject3.States.EnemyStates;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,9 +21,11 @@ namespace GameProject3.Controllers
         NavMeshAgent _navMeshAgent;
         InventoryController _inventoryController;
         Transform _playerTransform;
+        StateMachine _stateMachine;
 
-        bool _canAttack;
 
+
+        public bool CanAttack => Vector3.Distance(_playerTransform.position, this.transform.position) <= _navMeshAgent.stoppingDistance && _navMeshAgent.velocity == Vector3.zero;
         private void Awake()
         {
             _mover = new MoveWithNavMesh(this);
@@ -29,25 +33,36 @@ namespace GameProject3.Controllers
             _navMeshAgent = GetComponent<NavMeshAgent>();
             _health = GetComponent<IHealth>();
             _inventoryController = GetComponent<InventoryController>();
+            _stateMachine = new StateMachine();
         }
 
         private void Start()
         {
             _playerTransform = FindObjectOfType<PlayerController>().transform;
+
+            AttackState attackState = new AttackState();
+            ChaseState chaseState = new ChaseState();
+            DeadState deadState = new DeadState();
+
+            _stateMachine.AddState(chaseState, attackState, () => CanAttack);
+            _stateMachine.AddState(attackState, chaseState, () => !CanAttack);
+            _stateMachine.AddAnyState(deadState, () => _health.isDead);
+
+            _stateMachine.SetState(chaseState);
         }
 
         private void Update()
         {
             if (_health.isDead) return;
 
-            _mover.MoveAction(_playerTransform.transform.position, 10f);
+            _mover.MoveAction(_playerTransform.position, 10f);
 
-            _canAttack = Vector3.Distance(_playerTransform.position, this.transform.position) <= _navMeshAgent.stoppingDistance && _navMeshAgent.velocity == Vector3.zero;
 
+            _stateMachine.Tick();
         }
         private void FixedUpdate()
         {
-            if (_canAttack)
+            if (CanAttack)
             {
                 _inventoryController.CurrentWeapon.Attack();
             }
@@ -56,7 +71,7 @@ namespace GameProject3.Controllers
         private void LateUpdate()
         {
             _animation.MoveAnimation(_navMeshAgent.velocity.magnitude);
-            _animation.AttackAnimation(_canAttack);
+            _animation.AttackAnimation(CanAttack);
 
         }
     }

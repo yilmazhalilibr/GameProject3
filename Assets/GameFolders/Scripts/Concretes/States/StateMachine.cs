@@ -56,7 +56,7 @@ namespace GameProject3.States
             _stateTransformers.Add(stateTransformer);
         }
 
-        public void AnyState(IState to, System.Func<bool> condition)
+        public void AddAnyState(IState to, System.Func<bool> condition)
         {
             StateTransformer stateTransformer = new StateTransformer(null, to, condition);
             _anyStateTransformer.Add(stateTransformer);
