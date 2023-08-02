@@ -22,7 +22,11 @@ namespace GameProject3.Animations
 
         }
 
+        public void AttackAnimation(bool canAttack)
+        {
+            _animator.SetBool("isAttack", canAttack);
 
+        }
 
     }
 
