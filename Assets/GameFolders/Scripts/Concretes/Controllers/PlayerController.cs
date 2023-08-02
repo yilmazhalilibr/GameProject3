@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace GameProject3.Controllers
 {
-    public class PlayerController : MonoBehaviour , IEntityController
+    public class PlayerController : MonoBehaviour, IEntityController
     {
         [Header("Movement Informations")]
         [SerializeField] float _moveSpeed = 10f;
@@ -24,6 +24,7 @@ namespace GameProject3.Controllers
 
 
         CharacterAnimation _animation;
+        InventoryController _inventoryController;
 
         public Transform TurnTransform => _turnTransform;
 
@@ -34,21 +35,26 @@ namespace GameProject3.Controllers
             _animation = new CharacterAnimation(this);
             _xRotator = new RotatorX(this);
             _yRotator = new RotatorY(this);
+            _inventoryController = GetComponent<InventoryController>();
         }
 
         private void Update()
         {
+
             _direction = _input.Direction;
             _xRotator.RotationAction(_input.Rotation.x, _turnSpeed);
             _yRotator.RotationAction(_input.Rotation.y, _turnSpeed);
-            //Debug.Log(_input.Rotation.y);
 
-            if (_input.isAttackButtonPress) 
+            if (_input.isAttackButtonPress)
             {
-                /*_currentWeapon.Attack();*/ 
-
+                _inventoryController.CurrentWeapon.Attack();
 
             }
+            if (_input.IsInventoryButtonPressed)
+            {
+                _inventoryController.ChangeWeapon();
+            }
+
         }
 
         private void FixedUpdate()

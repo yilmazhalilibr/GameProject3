@@ -1,4 +1,6 @@
 using GameProject3.Abstracts.Inputs;
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,6 +13,9 @@ namespace GameProject3.Inputs
 
         public bool isAttackButtonPress { get; private set; }
 
+        public bool IsInventoryButtonPressed { get; private set; }
+
+        int _index = 0;
         public void OnMove(InputAction.CallbackContext context)
         {
             var OldDirection = context.ReadValue<Vector2>();
@@ -27,6 +32,20 @@ namespace GameProject3.Inputs
             isAttackButtonPress = context.ReadValueAsButton();
         }
 
+        public void OnInventoryPressed(InputAction.CallbackContext context)
+        {
+            if (IsInventoryButtonPressed && context.action.triggered) return;
+
+            StartCoroutine(WaitOnFrameAsync());
+        }
+
+        IEnumerator WaitOnFrameAsync()
+        {
+            IsInventoryButtonPressed = true && _index % 2 == 0;
+            yield return new WaitForEndOfFrame();
+            IsInventoryButtonPressed = false;
+            _index++;
+        }
     }
 }
 
