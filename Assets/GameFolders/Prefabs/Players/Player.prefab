@@ -551,6 +551,7 @@ GameObject:
   - component: {fileID: 3091895072969857826}
   - component: {fileID: 6710257810133404093}
   - component: {fileID: 7655335404689805203}
+  - component: {fileID: 6720423403827023764}
   m_Layer: 5
   m_Name: CurrentHealth
   m_TagString: Untagged
@@ -616,6 +617,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6720423403827023764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6628943676519567666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd09a44fc05e88c4a93bbba6fec9787d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6711104313293586879
 GameObject:
   m_ObjectHideFlags: 0
