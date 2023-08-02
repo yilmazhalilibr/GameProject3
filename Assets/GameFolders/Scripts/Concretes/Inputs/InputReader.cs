@@ -33,7 +33,7 @@ namespace GameProject3.Inputs
         }
 
         public void OnInventoryPressed(InputAction.CallbackContext context)
-        {
+        { 
             if (IsInventoryButtonPressed && context.action.triggered) return;
 
             StartCoroutine(WaitOnFrameAsync());
