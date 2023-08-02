@@ -24,11 +24,12 @@ namespace GameProject3.Controllers
         StateMachine _stateMachine;
 
 
-
         public bool CanAttack => Vector3.Distance(_playerTransform.position, this.transform.position) <= _navMeshAgent.stoppingDistance && _navMeshAgent.velocity == Vector3.zero;
+        public IMover Mover { get; private set; }
+
         private void Awake()
         {
-            _mover = new MoveWithNavMesh(this);
+            Mover = new MoveWithNavMesh(this);
             _animation = new CharacterAnimation(this);
             _navMeshAgent = GetComponent<NavMeshAgent>();
             _health = GetComponent<IHealth>();
@@ -41,7 +42,7 @@ namespace GameProject3.Controllers
             _playerTransform = FindObjectOfType<PlayerController>().transform;
 
             AttackState attackState = new AttackState();
-            ChaseState chaseState = new ChaseState();
+            ChaseState chaseState = new ChaseState(this, _playerTransform);
             DeadState deadState = new DeadState();
 
             _stateMachine.AddState(chaseState, attackState, () => CanAttack);
@@ -54,8 +55,6 @@ namespace GameProject3.Controllers
         private void Update()
         {
             if (_health.isDead) return;
-
-            _mover.MoveAction(_playerTransform.position, 10f);
 
 
             _stateMachine.Tick();

@@ -16,22 +16,19 @@ namespace GameProject3.Controllers
 
 
         IInputReader _input;
-        IMover _mover;
         IRotator _xRotator;
         IRotator _yRotator;
-
         Vector3 _direction;
-
-
         CharacterAnimation _animation;
         InventoryController _inventoryController;
 
         public Transform TurnTransform => _turnTransform;
+        public IMover Mover { get; private set; }
 
         private void Awake()
         {
             _input = GetComponent<IInputReader>();
-            _mover = new MoveWithCharacterController(this);
+            Mover = new MoveWithCharacterController(this);
             _animation = new CharacterAnimation(this);
             _xRotator = new RotatorX(this);
             _yRotator = new RotatorY(this);
@@ -59,7 +56,7 @@ namespace GameProject3.Controllers
 
         private void FixedUpdate()
         {
-            _mover.MoveAction(_direction, _moveSpeed);
+            Mover.MoveAction(_direction, _moveSpeed);
 
         }
 

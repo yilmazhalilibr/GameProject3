@@ -1,3 +1,4 @@
+using GameProject3.Abstracts.Controllers;
 using GameProject3.Abstracts.States;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,6 +8,17 @@ namespace GameProject3.States.EnemyStates
 {
     public class ChaseState : IState
     {
+        IEntityController _entityController;
+
+        Transform _targetTransform;
+
+        public ChaseState(IEntityController entityController,Transform target)
+        {
+            _entityController = entityController;
+            _targetTransform = target;
+        }
+
+
         public void OnEnter()
         {
             Debug.Log($"{nameof(ChaseState)} {nameof(OnEnter)}");
@@ -20,6 +32,7 @@ namespace GameProject3.States.EnemyStates
 
         public void Tick()
         {
+            _entityController.Mover.MoveAction(_targetTransform.position, 10f);
         }
     }
 }
