@@ -28,6 +28,11 @@ namespace GameProject3.Animations
 
         }
 
+        public void DeadAnimation()
+        {
+            _animator.SetTrigger("dead");
+        }
+
     }
 
 }

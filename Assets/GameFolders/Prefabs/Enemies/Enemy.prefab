@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 4213338513845217570}
   - component: {fileID: 2465480302643538539}
   - component: {fileID: 6388653578366354288}
+  - component: {fileID: 4697223823900419301}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -115,7 +116,7 @@ Transform:
   - {fileID: 1910705281800350106}
   - {fileID: 570236587452956441}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8017033630103557004
 MonoBehaviour:
@@ -129,7 +130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8edf2691a491cb1468f1330ca232a0fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerPrefab: {fileID: 0}
 --- !u!195 &7107030730646873467
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -201,6 +201,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weapons: []
+--- !u!114 &4697223823900419301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4736128990522741070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da7589a74368f5448b03153dd2abab67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _delayTime: 5
 --- !u!1 &7400430754981195633
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,8 +10,6 @@ namespace GameProject3.States.EnemyStates
     {
         IEnemyController _enemyController;
 
-        float _maxTime = 5f;
-        float _currentTime = 0f;
 
 
         public DeadState(IEnemyController enemyController)
@@ -23,6 +21,10 @@ namespace GameProject3.States.EnemyStates
         public void OnEnter()
         {
             Debug.Log($"{nameof(DeadState)} {nameof(OnEnter)}");
+
+            _enemyController.Dead.DeadAction();
+            _enemyController.Animation.DeadAnimation();
+            _enemyController.transform.GetComponent<CapsuleCollider>().enabled = false;
         }
 
         public void OnExit()
@@ -33,11 +35,7 @@ namespace GameProject3.States.EnemyStates
 
         public void Tick()
         {
-            _currentTime += Time.deltaTime;
-            if (_currentTime > _maxTime)
-            {
-                GameObject.Destroy(_enemyController.transform.gameObject);
-            }
+
 
         }
 

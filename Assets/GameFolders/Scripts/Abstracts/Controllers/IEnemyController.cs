@@ -1,5 +1,6 @@
 using GameProject3.Abstracts.Movements;
 using GameProject3.Animations;
+using GameProject3.Combats;
 using GameProject3.Controllers;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace GameProject3.Abstracts.Controllers
         InventoryController Inventory { get; }
         CharacterAnimation Animation { get; }
         Transform Target { get; set; }
+        Dead Dead { get; }
         float Magnitude { get; }
     }
 }

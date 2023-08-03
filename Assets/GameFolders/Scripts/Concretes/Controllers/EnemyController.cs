@@ -2,6 +2,7 @@ using GameProject3.Abstracts.Combats;
 using GameProject3.Abstracts.Controllers;
 using GameProject3.Abstracts.Movements;
 using GameProject3.Animations;
+using GameProject3.Combats;
 using GameProject3.Movements;
 using GameProject3.States;
 using GameProject3.States.EnemyStates;
@@ -27,7 +28,10 @@ namespace GameProject3.Controllers
 
         public CharacterAnimation Animation { get; private set; }
         public Transform Target { get; set; }
+        public Dead Dead { get; private set; }
+
         public float Magnitude => _navMeshAgent.velocity.magnitude;
+
 
         private void Awake()
         {
@@ -38,6 +42,8 @@ namespace GameProject3.Controllers
             _navMeshAgent = GetComponent<NavMeshAgent>();
             _health = GetComponent<IHealth>();
             _stateMachine = new StateMachine();
+
+            Dead = GetComponent<Dead>();
         }
 
         private void Start()
