@@ -1,3 +1,4 @@
+using GameProject3.Managers;
 using GameProject3.ScriptableObjects;
 using System;
 using System.Collections;
@@ -23,17 +24,18 @@ namespace GameProject3.Controllers
         private void Update()
         {
             _currentTime += Time.deltaTime;
-            if (_currentTime > _maxTime)
+
+            if (_currentTime > _maxTime && EnemyManager.Instance.CanSpawn)
             {
                 Spawn();
-
             }
-
         }
 
         private void Spawn()
         {
-            var enemy = Instantiate(_spawnInfo.EnemyPrefab, transform.position, Quaternion.identity);
+            EnemyController enemyController = Instantiate(_spawnInfo.EnemyPrefab, transform.position, Quaternion.identity);
+            EnemyManager.Instance.AddEnemyController(enemyController);
+
             _currentTime = 0f;
             _maxTime = _spawnInfo.RandomMaxSpawnTime;
         }

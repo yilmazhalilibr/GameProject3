@@ -3,6 +3,7 @@ using GameProject3.Abstracts.Controllers;
 using GameProject3.Abstracts.Movements;
 using GameProject3.Animations;
 using GameProject3.Combats;
+using GameProject3.Managers;
 using GameProject3.Movements;
 using GameProject3.States;
 using GameProject3.States.EnemyStates;
@@ -74,6 +75,10 @@ namespace GameProject3.Controllers
         {
             _stateMachine.TickLate();
 
+        }
+        private void OnDestroy()
+        {
+            EnemyManager.Instance.RemoveEnemyController(this);
         }
     }
 
