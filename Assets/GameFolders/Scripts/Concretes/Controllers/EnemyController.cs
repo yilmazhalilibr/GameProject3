@@ -12,37 +12,40 @@ using UnityEngine.AI;
 
 namespace GameProject3.Controllers
 {
-    public class EnemyController : MonoBehaviour, IEntityController
+    public class EnemyController : MonoBehaviour, IEnemyController
     {
 
-        IMover _mover;
         IHealth _health;
-        CharacterAnimation _animation;
         NavMeshAgent _navMeshAgent;
-        InventoryController _inventoryController;
-        Transform _playerTransform;
         StateMachine _stateMachine;
 
 
-        public bool CanAttack => Vector3.Distance(_playerTransform.position, this.transform.position) <= _navMeshAgent.stoppingDistance && _navMeshAgent.velocity == Vector3.zero;
+        public bool CanAttack => Vector3.Distance(Target.position, this.transform.position) <= _navMeshAgent.stoppingDistance && _navMeshAgent.velocity == Vector3.zero;
         public IMover Mover { get; private set; }
+
+        public InventoryController Inventory { get; private set; }
+
+        public CharacterAnimation Animation { get; private set; }
+        public Transform Target { get; set; }
+        public float Magnitude => _navMeshAgent.velocity.magnitude;
 
         private void Awake()
         {
             Mover = new MoveWithNavMesh(this);
-            _animation = new CharacterAnimation(this);
+            Animation = new CharacterAnimation(this);
+            Inventory = GetComponent<InventoryController>();
+
             _navMeshAgent = GetComponent<NavMeshAgent>();
             _health = GetComponent<IHealth>();
-            _inventoryController = GetComponent<InventoryController>();
             _stateMachine = new StateMachine();
         }
 
         private void Start()
         {
-            _playerTransform = FindObjectOfType<PlayerController>().transform;
+            Target = FindObjectOfType<PlayerController>().transform;
 
-            AttackState attackState = new AttackState();
-            ChaseState chaseState = new ChaseState(this, _playerTransform);
+            AttackState attackState = new AttackState(this);
+            ChaseState chaseState = new ChaseState(this);
             DeadState deadState = new DeadState();
 
             _stateMachine.AddState(chaseState, attackState, () => CanAttack);
@@ -54,23 +57,16 @@ namespace GameProject3.Controllers
 
         private void Update()
         {
-            if (_health.isDead) return;
-
-
             _stateMachine.Tick();
         }
         private void FixedUpdate()
         {
-            if (CanAttack)
-            {
-                _inventoryController.CurrentWeapon.Attack();
-            }
+            _stateMachine.TickFixed();
         }
 
         private void LateUpdate()
         {
-            _animation.MoveAnimation(_navMeshAgent.velocity.magnitude);
-            _animation.AttackAnimation(CanAttack);
+            _stateMachine.TickLate();
 
         }
     }

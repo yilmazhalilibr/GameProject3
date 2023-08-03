@@ -8,14 +8,12 @@ namespace GameProject3.States.EnemyStates
 {
     public class ChaseState : IState
     {
-        IEntityController _entityController;
+        IEnemyController _enemyController;
 
-        Transform _targetTransform;
 
-        public ChaseState(IEntityController entityController,Transform target)
+        public ChaseState(IEnemyController enemyController)
         {
-            _entityController = entityController;
-            _targetTransform = target;
+            _enemyController = enemyController;
         }
 
 
@@ -32,7 +30,16 @@ namespace GameProject3.States.EnemyStates
 
         public void Tick()
         {
-            _entityController.Mover.MoveAction(_targetTransform.position, 10f);
+            _enemyController.Mover.MoveAction(_enemyController.Target.position, 10f);
+        }
+
+        public void TickFixed()
+        {
+        }
+
+        public void TickLate()
+        {
+            _enemyController.Animation.MoveAnimation(_enemyController.Magnitude);
         }
     }
 }

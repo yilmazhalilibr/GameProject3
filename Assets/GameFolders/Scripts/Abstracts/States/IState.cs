@@ -6,8 +6,8 @@ namespace GameProject3.Abstracts.States
         void Tick();
         void OnExit();
         void OnEnter();
-        //void FixedTick();
-        //void LateTick();
+        void TickFixed();
+        void TickLate();
     }
 }
 

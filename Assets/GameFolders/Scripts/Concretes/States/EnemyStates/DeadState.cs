@@ -21,6 +21,14 @@ namespace GameProject3.States.EnemyStates
         public void Tick()
         {
         }
+
+        public void TickFixed()
+        {
+        }
+
+        public void TickLate()
+        {
+        }
     }
 
 }
