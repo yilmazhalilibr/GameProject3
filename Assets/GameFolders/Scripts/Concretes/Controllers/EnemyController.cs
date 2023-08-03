@@ -46,7 +46,7 @@ namespace GameProject3.Controllers
 
             AttackState attackState = new AttackState(this);
             ChaseState chaseState = new ChaseState(this);
-            DeadState deadState = new DeadState();
+            DeadState deadState = new DeadState(this);
 
             _stateMachine.AddState(chaseState, attackState, () => CanAttack);
             _stateMachine.AddState(attackState, chaseState, () => !CanAttack);
