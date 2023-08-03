@@ -28,9 +28,9 @@ namespace GameProject3.Animations
 
         }
 
-        public void DeadAnimation()
+        public void DeadAnimation(string parameterName)
         {
-            _animator.SetTrigger("dead");
+            _animator.SetTrigger(parameterName);
         }
 
     }

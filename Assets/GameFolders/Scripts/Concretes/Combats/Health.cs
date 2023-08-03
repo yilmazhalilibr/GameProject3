@@ -14,6 +14,7 @@ namespace GameProject3.Combats
         int _currentHealth;
 
         public event System.Action<int, int> OnTakeHit;
+        public event System.Action OnDead;
 
         public bool isDead => _currentHealth <= 0;
         private void Awake()
@@ -28,6 +29,9 @@ namespace GameProject3.Combats
             _currentHealth -= damage;
 
             OnTakeHit?.Invoke(_currentHealth, _healthInfo.MaxHealth);
+
+            if (isDead) OnDead?.Invoke();
+
         }
 
 

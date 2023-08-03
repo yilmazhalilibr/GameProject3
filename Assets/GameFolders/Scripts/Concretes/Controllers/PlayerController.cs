@@ -1,7 +1,9 @@
+using GameProject3.Abstracts.Combats;
 using GameProject3.Abstracts.Controllers;
 using GameProject3.Abstracts.Inputs;
 using GameProject3.Abstracts.Movements;
 using GameProject3.Animations;
+using GameProject3.Combats;
 using GameProject3.Movements;
 using UnityEngine;
 
@@ -19,6 +21,7 @@ namespace GameProject3.Controllers
         IRotator _xRotator;
         IRotator _yRotator;
         IMover _mover;
+        IHealth _health;
         Vector3 _direction;
         CharacterAnimation _animation;
         InventoryController _inventoryController;
@@ -33,10 +36,21 @@ namespace GameProject3.Controllers
             _xRotator = new RotatorX(this);
             _yRotator = new RotatorY(this);
             _inventoryController = GetComponent<InventoryController>();
+            _health = GetComponent<Health>();
+        }
+        private void OnEnable()
+        {
+            _health.OnDead += () => _animation.DeadAnimation("death");
+        }
+        private void OnDisable()
+        {
+            _health.OnDead -= () => _animation.DeadAnimation("death");
+
         }
 
         private void Update()
         {
+            if (_health.isDead) return;
 
             _direction = _input.Direction;
             _xRotator.RotationAction(_input.Rotation.x, _turnSpeed);
@@ -56,12 +70,16 @@ namespace GameProject3.Controllers
 
         private void FixedUpdate()
         {
+            if (_health.isDead) return;
+
             _mover.MoveAction(_direction, _moveSpeed);
 
         }
 
         private void LateUpdate()
         {
+            if (_health.isDead) return;
+
             _animation.MoveAnimation(_direction.magnitude);
             _animation.AttackAnimation(_input.isAttackButtonPress);
         }
