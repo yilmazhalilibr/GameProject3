@@ -23,7 +23,7 @@ namespace GameProject3.States.EnemyStates
             Debug.Log($"{nameof(DeadState)} {nameof(OnEnter)}");
 
             _enemyController.Dead.DeadAction();
-            _enemyController.Animation.DeadAnimation("dying");
+            _enemyController.Animation.DeadAnimation("dead");
             _enemyController.transform.GetComponent<CapsuleCollider>().enabled = false;
         }
 

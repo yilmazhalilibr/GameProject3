@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7898534529418068221, guid: ae9d79645c0918945a4f2122a5e952c8, type: 3}
+      propertyPath: _spawnInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: a649fc0e72cf3f44fb2453b5bdc8e335, type: 2}
     - target: {fileID: 8376504809630748240, guid: ae9d79645c0918945a4f2122a5e952c8, type: 3}
       propertyPath: m_Name
       value: Core
@@ -261,6 +265,10 @@ PrefabInstance:
     - target: {fileID: 4736128990522741070, guid: 2b8416371f3038a42a53d708ac460fcc, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736128990522741070, guid: 2b8416371f3038a42a53d708ac460fcc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6777103227717698318, guid: 2b8416371f3038a42a53d708ac460fcc, type: 3}
       propertyPath: m_RootOrder
