@@ -7,15 +7,22 @@ namespace GameProject3.Managers
 {
     public class GameManager : SingletonMonoBehaviour<GameManager>
     {
-        [SerializeField] int _waveMaxCount = 100;
+        [SerializeField] float _waitNextLevel = 10f;
+        [SerializeField] float _waveMultiple = 1.2f;
+        [SerializeField] int _maxWaveBoundaryCount = 50;
 
-        public bool IsWaveFinished => _waveMaxCount <= 0;
+
+        int _currentWaveMaxCount;
+        public bool IsWaveFinished => _currentWaveMaxCount <= 0;
 
         private void Awake()
         {
             SetSingeltonThisGameObject(this);
         }
-
+        private void Start()
+        {
+            _currentWaveMaxCount = _maxWaveBoundaryCount;
+        }
         public void LoadLevel(string name)
         {
             StartCoroutine(LoadLevelAsync(name));
@@ -28,8 +35,30 @@ namespace GameProject3.Managers
 
         public void DecreaseWaveCount()
         {
-            if (IsWaveFinished) return;
-            _waveMaxCount--;
+            if (IsWaveFinished)
+            {
+                if (EnemyManager.Instance.IsListEmpty) 
+                {
+                    StartCoroutine(StartNextWaveAsync());
+
+                }
+            }
+            else
+            {
+                _currentWaveMaxCount--;
+
+            }
+
+
+        }
+
+        private IEnumerator StartNextWaveAsync()
+        {
+         
+            yield return new WaitForSeconds(_waitNextLevel);
+            _maxWaveBoundaryCount = System.Convert.ToInt32(_maxWaveBoundaryCount * _waveMultiple);
+            _currentWaveMaxCount = _maxWaveBoundaryCount;
+
         }
 
     }
