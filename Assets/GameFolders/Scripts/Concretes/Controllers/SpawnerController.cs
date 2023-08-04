@@ -25,7 +25,7 @@ namespace GameProject3.Controllers
         {
             _currentTime += Time.deltaTime;
 
-            if (_currentTime > _maxTime && EnemyManager.Instance.CanSpawn)
+            if (_currentTime > _maxTime && EnemyManager.Instance.CanSpawn && !GameManager.Instance.IsWaveFinished)
             {
                 Spawn();
             }
