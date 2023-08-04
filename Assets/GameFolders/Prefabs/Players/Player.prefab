@@ -1555,6 +1555,10 @@ PrefabInstance:
       propertyPath: field of view
       value: 60.000004
       objectReference: {fileID: 0}
+    - target: {fileID: 1564020010319641518, guid: 79bf3b211266bbe44877b5ce8604e3d2, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 2252336904298863900, guid: 79bf3b211266bbe44877b5ce8604e3d2, type: 3}
       propertyPath: m_Name
       value: PlayerCamera
