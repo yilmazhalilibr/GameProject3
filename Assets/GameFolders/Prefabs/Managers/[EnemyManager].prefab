@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0cdd11d91ed9484394ed31193b67c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxCountOnGame: 20
+  _enemies: []

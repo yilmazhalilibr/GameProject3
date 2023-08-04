@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: c2a172a197c5c594aaa75f5e3b15e47c, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 58eabea81d2114d47ac50658643d9899, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -402,8 +402,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 3ac5962c-b1a2-4267-9b45-9840c8c9b167
-    m_ActionName: OnFood/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+    m_ActionId: 7b41dab8-e85b-4139-abd5-b29495d3044b
+    m_ActionName: OnFoot/Movement[/Keyboard/w,/Keyboard/a,/Keyboard/s,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8740488542881823869}
@@ -418,8 +418,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 6e4d3e48-98ef-46bb-9544-6fe9867bc6f1
-    m_ActionName: OnFood/Rotator[/Mouse/delta]
+    m_ActionId: 04e71e2b-7a32-4696-bb83-eff4bd9da228
+    m_ActionName: OnFoot/Rotator[/Mouse/delta]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8740488542881823869}
@@ -434,8 +434,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 32cc5e5c-c656-4fd9-8a8d-83a31b67514e
-    m_ActionName: OnFood/Attack[/Mouse/leftButton]
+    m_ActionId: 08bc538b-0bcc-434a-8c77-aa9c833ac76a
+    m_ActionName: OnFoot/Attack[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8740488542881823869}
@@ -450,11 +450,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: a461a1c2-fc5a-4a7e-a691-6d0f042b5ec9
-    m_ActionName: OnFood/Inventory[/Keyboard/i]
+    m_ActionId: 9f884a34-f0c5-4c79-bf60-d976f6cff222
+    m_ActionName: OnFoot/Inventory[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c95b2375-e6d9-4b88-9c4c-c5e76515df4b
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7607c7b6-cd76-4816-beef-bd0341cfe950
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 15cef263-9014-4fd5-94d9-4e4a6234a6ef
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 32b35790-4ed0-4e9a-aa41-69ac6d629449
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3c7022bf-7922-4f7c-a998-c437916075ad
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0489e84a-4833-4c40-bfae-cea84b696689
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dad70c86-b58c-4b17-88ad-f5e53adf419e
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 44b200b1-1557-4083-816c-b22cbdf77ddf
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 24908448-c609-4bc3-a128-ea258674378a
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
+    m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: OnFood
+  m_DefaultActionMap: OnFoot
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &8740488542881823869
@@ -549,6 +589,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8545130534879480957}
+  - component: {fileID: 9110071177016531786}
   - component: {fileID: 7521767288016715956}
   - component: {fileID: 5740210289537892722}
   - component: {fileID: 3357041033228852355}
@@ -579,6 +620,18 @@ RectTransform:
   m_AnchoredPosition: {x: -151.0632, y: -115.28}
   m_SizeDelta: {x: 302.1264, y: 230.55}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &9110071177016531786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4489946758315652538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6010b00d9765e094e8a666c3a2fbc507, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7521767288016715956
 MonoBehaviour:
   m_ObjectHideFlags: 0
