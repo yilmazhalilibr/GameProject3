@@ -16,6 +16,7 @@ namespace GameProject3.Abstracts.Controllers
         Transform Target { get; set; }
         Dead Dead { get; }
         float Magnitude { get; }
+        void FindNearestTarget();
     }
 }
 

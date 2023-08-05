@@ -4,6 +4,7 @@ using GameProject3.Abstracts.Inputs;
 using GameProject3.Abstracts.Movements;
 using GameProject3.Animations;
 using GameProject3.Combats;
+using GameProject3.Managers;
 using GameProject3.Movements;
 using UnityEngine;
 
@@ -48,13 +49,15 @@ namespace GameProject3.Controllers
                 _gameOverPanel.SetActive(true);
             };
 
-
-
+            EnemyManager.Instance.Targets.Add(this.transform);
 
         }
         private void OnDisable()
         {
             _health.OnDead -= () => _animation.DeadAnimation("death");
+
+            EnemyManager.Instance.Targets.Remove(this.transform);
+
 
         }
 

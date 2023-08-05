@@ -75,6 +75,7 @@ namespace GameProject3.Managers
             {
                 _playerCount = 0;
                 EnemyManager.Instance.DestroyAllEnemy();
+                EnemyManager.Instance.Targets.Clear();
                 LoadLevel("Menu");
             }
         }

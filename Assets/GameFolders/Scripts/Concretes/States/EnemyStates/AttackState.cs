@@ -37,6 +37,7 @@ namespace GameProject3.States.EnemyStates
         public void TickFixed()
         {
             _enemyController.Inventory.CurrentWeapon.Attack();
+            _enemyController.FindNearestTarget();
         }
         public void TickLate()
         {

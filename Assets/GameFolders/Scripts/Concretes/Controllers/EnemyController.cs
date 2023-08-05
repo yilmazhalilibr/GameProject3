@@ -49,7 +49,7 @@ namespace GameProject3.Controllers
 
         private void Start()
         {
-            Target = FindObjectOfType<PlayerController>().transform;
+            FindNearestTarget();
 
             AttackState attackState = new AttackState(this);
             ChaseState chaseState = new ChaseState(this);
@@ -61,6 +61,8 @@ namespace GameProject3.Controllers
 
             _stateMachine.SetState(chaseState);
         }
+
+
 
         private void Update()
         {
@@ -79,6 +81,26 @@ namespace GameProject3.Controllers
         private void OnDestroy()
         {
             EnemyManager.Instance.RemoveEnemyController(this);
+        }
+
+
+        public void FindNearestTarget()
+        {
+
+            Transform nearest = EnemyManager.Instance.Targets[0];
+
+            foreach (Transform target in EnemyManager.Instance.Targets)
+            {
+                float nearestValue = Vector3.Distance(nearest.position, this.transform.position);
+                float nextNewValue = Vector3.Distance(target.position, transform.position);
+                if (nextNewValue < nearestValue)
+                {
+                    nearest = target;
+                }
+
+            }
+
+            Target = nearest;
         }
     }
 
