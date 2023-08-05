@@ -2,7 +2,6 @@
 using UnityEngine;
 
 
-
 public class assault57 : MonoBehaviour
 {
 
@@ -16,7 +15,7 @@ public class assault57 : MonoBehaviour
 
         change_equipment();
         recyle_particles_performance = GameObject.FindGameObjectWithTag("rycle");
-        
+
 
 
 
@@ -50,7 +49,7 @@ public class assault57 : MonoBehaviour
 
     void Update()
     {
-        
+
         Input_Status();
 
         // Input from the main player
@@ -74,7 +73,7 @@ public class assault57 : MonoBehaviour
             Power_bolt = -1;
         }
 
-       
+
 
         ani.SetFloat("Power_bolt", Power_bolt);
 
@@ -120,7 +119,7 @@ public class assault57 : MonoBehaviour
 
             if (!button_aim)
             {
-               // idle walk
+                // idle walk
 
                 ani.SetInteger("assault57", 2);
 
@@ -312,7 +311,7 @@ public class assault57 : MonoBehaviour
         float ver = Random.Range(-current_spread, current_spread);
 
 
-        
+
         Add_spread = new Vector3(hor, ver, 0);
 
 
@@ -322,7 +321,7 @@ public class assault57 : MonoBehaviour
         Power_bolt = 1;
 
 
-       
+
         bullet_drop();
 
 
@@ -378,7 +377,7 @@ public class assault57 : MonoBehaviour
 
         RaycastHit hit;
 
-        
+
 
         // shooting from the camera
         shoot_handle.GetComponent<shoot_handle>().register_shoot(Cam.transform.position, Cam.transform.TransformDirection(Vector3.forward - Add_spread), Joule);
@@ -390,7 +389,7 @@ public class assault57 : MonoBehaviour
         }
 
 
-       
+
         magazine_current -= 1;
 
 
@@ -434,7 +433,7 @@ public class assault57 : MonoBehaviour
     public IEnumerator reload_start()
     {
 
-        
+
         in_reload = true;
         finished_reload_in_reload = false;
 
@@ -463,7 +462,7 @@ public class assault57 : MonoBehaviour
             g.transform.parent = Shoot_start_point.transform;
         }
 
-      
+
         yield return new WaitForSeconds(reload_time);
 
 
@@ -490,7 +489,7 @@ public class assault57 : MonoBehaviour
         finished_shoot = true;
         in_reload = false;
 
-       
+
         StopCoroutine(reload_start());
 
     }
@@ -501,7 +500,7 @@ public class assault57 : MonoBehaviour
     public Animator ani;
 
 
-   
+
     public Vector3 idle_cam;
     public Vector3 aim_cam;
     public Vector3 run_cam;
@@ -679,9 +678,9 @@ public class assault57 : MonoBehaviour
     public void change_equipment()
     {
 
-        
 
-        
+
+
         scope = false;
 
 

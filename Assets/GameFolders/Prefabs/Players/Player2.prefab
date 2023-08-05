@@ -24,6 +24,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6405621156203788027, guid: 19fd5044938b0d645ad05954db3967c8, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405621156203788027, guid: 19fd5044938b0d645ad05954db3967c8, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7803897173583906104, guid: 19fd5044938b0d645ad05954db3967c8, type: 3}
       propertyPath: m_RootOrder
       value: 0

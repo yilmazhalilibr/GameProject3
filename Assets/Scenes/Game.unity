@@ -192,26 +192,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 395500366200339215, guid: 482986578f00084489629bb0b7eb93e0, type: 3}
-      propertyPath: m_PlayerLeftEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HandleOnLeft
-      objectReference: {fileID: 0}
-    - target: {fileID: 395500366200339215, guid: 482986578f00084489629bb0b7eb93e0, type: 3}
-      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HandleOnJoin
-      objectReference: {fileID: 0}
-    - target: {fileID: 5551446826428325487, guid: 482986578f00084489629bb0b7eb93e0, type: 3}
-      propertyPath: _prefabs.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5551446826428325487, guid: 482986578f00084489629bb0b7eb93e0, type: 3}
-      propertyPath: _prefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 8528746396613399688, guid: 19fd5044938b0d645ad05954db3967c8, type: 3}
-    - target: {fileID: 5551446826428325487, guid: 482986578f00084489629bb0b7eb93e0, type: 3}
-      propertyPath: _prefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 2785575921304575528, guid: 47e8ea3b46f85a3429aca811330dfcf4, type: 3}
     - target: {fileID: 7198102209336309806, guid: 482986578f00084489629bb0b7eb93e0, type: 3}
       propertyPath: m_RootOrder
       value: 2

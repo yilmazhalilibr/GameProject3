@@ -31,19 +31,19 @@ namespace GameProject3.Managers
 
             WaitForSeconds waitForSecond = new WaitForSeconds(1f);
 
-            for (int i = 0; i < GameManager.Instance.PlayerCount; i++)
-            {
-                _playerInputManager.JoinPlayer(_playerIndex);
-                yield return waitForSecond;
+            //  for (int i = 0; i < GameManager.Instance.PlayerCount; i++)
+            //  {
+            _playerInputManager.JoinPlayer(_playerIndex);
+            yield return waitForSecond;
 
-            }
+            //}
 
         }
 
         public void HandleOnJoin()
         {
-            _playerIndex++;
             _playerInputManager.playerPrefab = _prefabs[_playerIndex];
+            _playerIndex++;
 
         }
 
@@ -51,7 +51,6 @@ namespace GameProject3.Managers
         {
             _playerIndex--;
             _playerInputManager.playerPrefab = _prefabs[_playerIndex];
-
 
         }
 

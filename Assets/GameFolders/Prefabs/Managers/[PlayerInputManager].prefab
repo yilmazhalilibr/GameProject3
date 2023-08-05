@@ -113,4 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7616fa555916d7842a56fb3fae18e2ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 2893705532177180301, guid: b9e10e32942239349aeb4095de76a58c, type: 3}
+  _prefabs:
+  - {fileID: 8528746396613399688, guid: 19fd5044938b0d645ad05954db3967c8, type: 3}
+  - {fileID: 2785575921304575528, guid: 47e8ea3b46f85a3429aca811330dfcf4, type: 3}

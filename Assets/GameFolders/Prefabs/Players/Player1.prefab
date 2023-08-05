@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 473413355437606142, guid: b9e10e32942239349aeb4095de76a58c, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 473413355437606142, guid: b9e10e32942239349aeb4095de76a58c, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1952944874769397793, guid: b9e10e32942239349aeb4095de76a58c, type: 3}
       propertyPath: m_Layer
       value: 6

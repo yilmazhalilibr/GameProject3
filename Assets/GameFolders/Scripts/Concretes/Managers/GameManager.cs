@@ -68,6 +68,17 @@ namespace GameProject3.Managers
             _playerCount++;
         }
 
+        public void LoadReturnMenu()
+        {
+            if (_playerCount > 1) { _playerCount--; }
+            else
+            {
+                _playerCount = 0;
+                EnemyManager.Instance.DestroyAllEnemy();
+                LoadLevel("Menu");
+            }
+        }
+
     }
 }
 

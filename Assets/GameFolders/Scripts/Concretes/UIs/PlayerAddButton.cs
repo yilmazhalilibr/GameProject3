@@ -1,3 +1,4 @@
+using GameProject3.Abstracts.UIs;
 using GameProject3.Managers;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,30 +8,12 @@ using UnityEngine.UI;
 
 namespace GameProject3.UIs
 {
-    public class PlayerAddButton : MonoBehaviour
+    public class PlayerAddButton : BaseButton
     {
-        Button _button;
-
-        private void Awake()
-        {
-            _button = GetComponent<Button>();
-        }
-
-        private void OnEnable()
-        {
-            _button.onClick.AddListener(OnButtonClicked);
-        }
-
-        private void OnDisable()
-        {
-            _button.onClick.RemoveListener(OnButtonClicked);
-        }
-
-        private void OnButtonClicked()
+        protected override void HandleOnButtonClicked()
         {
             GameManager.Instance.IncreasePlayerCount();
         }
-
     }
 
 

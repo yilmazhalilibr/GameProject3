@@ -34,7 +34,14 @@ namespace GameProject3.Managers
 
         }
 
-
+        public void DestroyAllEnemy()
+        {
+            foreach (EnemyController enemyController in _enemies)
+            {
+                Destroy(enemyController.gameObject);
+            }
+            _enemies.Clear();
+        }
 
     }
 }
