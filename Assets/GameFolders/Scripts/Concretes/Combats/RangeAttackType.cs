@@ -7,16 +7,13 @@ using UnityEngine;
 
 namespace GameProject3.Combats
 {
-    public class RangeAttackType : IAttackType
+    public class RangeAttackType : MonoBehaviour, IAttackType
     {
-        AttackSO _attackSO;
-        Camera _camera;
+        [SerializeField]AttackSO _attackSO;
+        [SerializeField] Camera _camera;
+        [SerializeField] Transform _bulletPoint;
 
-        public RangeAttackType(Transform trnasformObject, AttackSO attackSO)
-        {
-            _camera = trnasformObject.GetComponent<Camera>();
-            _attackSO = attackSO;
-        }
+        public AttackSO AttackInfo => _attackSO;
 
         public void AttackAction()
         {

@@ -11,28 +11,27 @@ namespace GameProject3.Controllers
     public class WeaponController : MonoBehaviour
     {
         [SerializeField] bool _canFire;
-        [SerializeField] Transform _transformObject;
         [SerializeField] AttackSO _attackSO;
-
 
         float _currentTime = 0f;
 
         IAttackType _attackType;
 
-        public AttackSO AttackSo => _attackSO;
+        public AnimatorOverrideController AnimatorOverride => _attackSO.AnimatorOverride;
 
 
         private void Awake()
         {
-            _attackType = _attackSO.GetAttackType(_transformObject);
+            _attackType =GetComponent<IAttackType>();
         }
+
         private void Update()
         {
             _currentTime += Time.deltaTime;
 
             _canFire = _currentTime > _attackSO.AttackMaxDelay;
         }
-
+       
         public void Attack()
         {
             if (!_canFire) return;

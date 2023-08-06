@@ -8,16 +8,12 @@ using UnityEngine;
 
 namespace GameProject3.Combats
 {
-    public class MeleeAttackType : IAttackType
+    public class MeleeAttackType : MonoBehaviour, IAttackType
     {
-        Transform _transformObject;
-        AttackSO _attackSo;
-        public MeleeAttackType(Transform transformObject, AttackSO attackSo)
-        {
-            _attackSo = attackSo;
-            _transformObject = transformObject;
-        }
+        [SerializeField] Transform _transformObject;
+        [SerializeField] AttackSO _attackSo;
 
+        public AttackSO AttackInfo => _attackSo;
 
         public void AttackAction()
         {
