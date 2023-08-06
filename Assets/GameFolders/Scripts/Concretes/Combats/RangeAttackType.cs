@@ -16,6 +16,7 @@ namespace GameProject3.Combats
         {
             _camera = trnasformObject.GetComponent<Camera>();
             _attackSO = attackSO;
+            SoundManager.Instance.SoundControllers[1].SetClip(_attackSO.AudioCLip);
         }
 
         public void AttackAction()
@@ -33,7 +34,7 @@ namespace GameProject3.Combats
 
             }
 
-            SoundManager.Instance.PlayMachineGun(_camera.transform.position);
+            SoundManager.Instance.RangeAttackSound(_camera.transform.position);
 
         }
 

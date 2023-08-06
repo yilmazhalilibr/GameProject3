@@ -20,6 +20,7 @@ namespace GameProject3.ScriptableObjects
         [SerializeField] LayerMask _layerMask;
         [SerializeField] float _attackMaxDelay = 0.25f;
         [SerializeField] AnimatorOverrideController _animatorOverride;
+        [SerializeField] AudioClip _audioClip;
 
 
         public float AttackMaxDelay => _attackMaxDelay;
@@ -38,7 +39,7 @@ namespace GameProject3.ScriptableObjects
                 return new MeleeAttackType(transform, this);
             }
         }
-
+        public AudioClip AudioCLip => _audioClip;
     }
 
 }
