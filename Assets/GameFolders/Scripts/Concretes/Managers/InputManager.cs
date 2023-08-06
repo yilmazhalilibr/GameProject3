@@ -44,25 +44,20 @@ namespace GameProject3.Managers
         {
             _playerIndex++;
 
-            if (_playerIndex > _prefabs.Length - 1)
-            {
-                _playerIndex = _prefabs.Length - 1;
-                return;
-            };
-
+            if (_playerIndex >= _prefabs.Length) _playerIndex = _prefabs.Length - 1;
             _playerInputManager.playerPrefab = _prefabs[_playerIndex];
+
+            _playerInputManager.splitScreen = true;
 
         }
 
         public void HandleOnLeft()
         {
             _playerIndex--;
-            if (_playerIndex < 0)
-            {
-                _playerIndex = 0;
-                return;
-            };
+            if (_playerIndex < 0) _playerIndex = 0;
             _playerInputManager.playerPrefab = _prefabs[_playerIndex];
+
+            _playerInputManager.splitScreen = false;
 
         }
 

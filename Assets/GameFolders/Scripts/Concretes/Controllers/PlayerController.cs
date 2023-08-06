@@ -16,6 +16,7 @@ namespace GameProject3.Controllers
         [SerializeField] float _moveSpeed = 10f;
         [SerializeField] float _turnSpeed = 10f;
         [SerializeField] Transform _turnTransform;
+        [SerializeField] Transform _ribTransform;
 
         [Header("Uis")]
         [SerializeField] GameObject _gameOverPanel;
@@ -23,6 +24,7 @@ namespace GameProject3.Controllers
         IInputReader _input;
         IRotator _xRotator;
         IRotator _yRotator;
+        IRotator _ribRotator;
         IMover _mover;
         IHealth _health;
         Vector3 _direction;
@@ -38,6 +40,7 @@ namespace GameProject3.Controllers
             _animation = new CharacterAnimation(this);
             _xRotator = new RotatorX(this);
             _yRotator = new RotatorY(this);
+            _ribRotator = new RibRotator(_ribTransform);
             _inventoryController = GetComponent<InventoryController>();
             _health = GetComponent<Health>();
         }
@@ -95,6 +98,8 @@ namespace GameProject3.Controllers
 
             _animation.MoveAnimation(_direction.magnitude);
             _animation.AttackAnimation(_input.isAttackButtonPress);
+
+            _ribRotator.RotationAction(_input.Rotation.y * -1, _turnSpeed);
         }
 
 

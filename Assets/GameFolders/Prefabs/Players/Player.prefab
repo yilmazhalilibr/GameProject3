@@ -520,6 +520,7 @@ MonoBehaviour:
   _moveSpeed: 5
   _turnSpeed: 5
   _turnTransform: {fileID: 517377176010622443}
+  _ribTransform: {fileID: 7965643109105060480}
   _gameOverPanel: {fileID: 4593928029408021339}
 --- !u!114 &8888373090332865937
 MonoBehaviour:
@@ -2248,6 +2249,11 @@ PrefabInstance:
 --- !u!4 &1252427519001534752 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7881910974094771655, guid: 250ae12200ffb094cbf6d64a2fcbff3c, type: 3}
+  m_PrefabInstance: {fileID: 8936171302661563623}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7965643109105060480 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -7888039079188599193, guid: 250ae12200ffb094cbf6d64a2fcbff3c, type: 3}
   m_PrefabInstance: {fileID: 8936171302661563623}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8125269595752995254 stripped
