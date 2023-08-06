@@ -21,8 +21,10 @@ namespace GameProject3.Controllers
             _audioSource.clip = clip;
         }
 
-        public void PlaySound()
+        public void PlaySound(Vector3 position)
         {
+            if (_audioSource.isVirtual) return;
+            transform.position = position;
             _audioSource.Play();
         }
 

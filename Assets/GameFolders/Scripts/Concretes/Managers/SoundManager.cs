@@ -23,15 +23,18 @@ namespace GameProject3.Managers
 
         private void Start()
         {
-            _soundControllers[0].SetClip(_clips[0]);
-            _soundControllers[1].SetClip(_clips[1]);
+            for (int i = 0; i < _soundControllers.Length; i++)
+            {
+                _soundControllers[i].SetClip(_clips[i]);
 
-            _soundControllers[0].PlaySound();
+            }
+
+            _soundControllers[0].PlaySound(Vector3.zero);
         }
 
         public void PlayMachineGun(Vector3 position)
         {
-            _soundControllers[1].SetClip(_clips[1]);
+            _soundControllers[1].PlaySound(position);
         }
 
 
