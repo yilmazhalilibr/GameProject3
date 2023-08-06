@@ -27,14 +27,30 @@ namespace GameProject3.Managers
             _soundControllers[0].PlaySound(Vector3.zero);
         }
 
-        public void RangeAttackSound(Vector3 position)
+        public void RangeAttackSound(AudioClip clip,Vector3 position)
         {
             _soundControllers[1].PlaySound(position);
+            _soundControllers[1].SetClip(clip);
         }
 
-        public void MeleeAttackSound(Vector3 position)
+        public void MeleeAttackSound(AudioClip clip, Vector3 position)
         {
             _soundControllers[2].PlaySound(position);
+        }
+
+        public void PlaySound(AudioClip clip, Vector3 position)
+        {
+            for (int i = 1; i < _soundControllers.Length; i++)
+            {
+                if (_soundControllers[i].IsPlaying) continue;
+
+                _soundControllers[i].SetClip(clip);
+
+                _soundControllers[i].PlaySound(position);
+
+                break;
+
+            }
         }
 
     }

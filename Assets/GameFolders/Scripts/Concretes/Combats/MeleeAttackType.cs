@@ -16,7 +16,6 @@ namespace GameProject3.Combats
         {
             _attackSo = attackSo;
             _transformObject = transformObject;
-            SoundManager.Instance.SoundControllers[2].SetClip(_attackSo.AudioCLip);
         }
 
 
@@ -33,7 +32,7 @@ namespace GameProject3.Combats
                 }
             }
 
-            SoundManager.Instance.MeleeAttackSound(_transformObject.position);
+            SoundManager.Instance.MeleeAttackSound(_attackSo.AudioClip, _transformObject.position);
 
         }
 

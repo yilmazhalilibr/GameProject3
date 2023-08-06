@@ -39,7 +39,7 @@ namespace GameProject3.ScriptableObjects
                 return new MeleeAttackType(transform, this);
             }
         }
-        public AudioClip AudioCLip => _audioClip;
+        public AudioClip AudioClip => _audioClip;
     }
 
 }
