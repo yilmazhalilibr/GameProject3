@@ -42,6 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8275095930353642309}
   - component: {fileID: 2029520634444993782}
+  - component: {fileID: 6705018557463952095}
   m_Layer: 0
   m_Name: Weapon3
   m_TagString: Untagged
@@ -77,8 +78,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canFire: 0
-  _transformObject: {fileID: 570236587452956441}
-  _attackSO: {fileID: 11400000, guid: 4973f34c39b307e43b4ebbe2f0a28be2, type: 2}
+--- !u!114 &6705018557463952095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2757349464988961377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d7ce6c3938066c4e8c6f48ae3bbb15b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transformObject: {fileID: 5704371721593148545}
+  _attackSo: {fileID: 11400000, guid: 4973f34c39b307e43b4ebbe2f0a28be2, type: 2}
 --- !u!1 &4736128990522741070
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +129,7 @@ Transform:
   - {fileID: 1910705281800350106}
   - {fileID: 570236587452956441}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8017033630103557004
 MonoBehaviour:

@@ -1,7 +1,3 @@
-using GameProject3.Abstracts.Combats;
-using GameProject3.Combats;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace GameProject3.ScriptableObjects

@@ -468,6 +468,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 482713094678468197, guid: f1e39cf446cd96c4a92ae8c60d60c07e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d08526e99ed5ca4aa8fd8e4d36002e1, type: 3}
+    - target: {fileID: 1012039520146081450, guid: f1e39cf446cd96c4a92ae8c60d60c07e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d08526e99ed5ca4aa8fd8e4d36002e1, type: 3}
+    - target: {fileID: 1735059975596540804, guid: f1e39cf446cd96c4a92ae8c60d60c07e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d08526e99ed5ca4aa8fd8e4d36002e1, type: 3}
+    - target: {fileID: 2045068986439437079, guid: f1e39cf446cd96c4a92ae8c60d60c07e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d08526e99ed5ca4aa8fd8e4d36002e1, type: 3}
+    - target: {fileID: 2290293850105030609, guid: f1e39cf446cd96c4a92ae8c60d60c07e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: aa00f908e5d304e438995e4f656d3f98, type: 3}
+    - target: {fileID: 2966391054793165737, guid: f1e39cf446cd96c4a92ae8c60d60c07e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d08526e99ed5ca4aa8fd8e4d36002e1, type: 3}
     - target: {fileID: 3205908671234633273, guid: f1e39cf446cd96c4a92ae8c60d60c07e, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -512,10 +536,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3269993301081951649, guid: f1e39cf446cd96c4a92ae8c60d60c07e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d08526e99ed5ca4aa8fd8e4d36002e1, type: 3}
+    - target: {fileID: 3942897455174713129, guid: f1e39cf446cd96c4a92ae8c60d60c07e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d08526e99ed5ca4aa8fd8e4d36002e1, type: 3}
+    - target: {fileID: 4463329416776839202, guid: f1e39cf446cd96c4a92ae8c60d60c07e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d08526e99ed5ca4aa8fd8e4d36002e1, type: 3}
+    - target: {fileID: 6162502584557134881, guid: f1e39cf446cd96c4a92ae8c60d60c07e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d08526e99ed5ca4aa8fd8e4d36002e1, type: 3}
+    - target: {fileID: 6281703968287163004, guid: f1e39cf446cd96c4a92ae8c60d60c07e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d08526e99ed5ca4aa8fd8e4d36002e1, type: 3}
     - target: {fileID: 6966106888821699372, guid: f1e39cf446cd96c4a92ae8c60d60c07e, type: 3}
       propertyPath: m_Name
       value: '[SoundManager]'
       objectReference: {fileID: 0}
+    - target: {fileID: 8163500064057081906, guid: f1e39cf446cd96c4a92ae8c60d60c07e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e8977724d2410d46ac0e23d79554da9, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

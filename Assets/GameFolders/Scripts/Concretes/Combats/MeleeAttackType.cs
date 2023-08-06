@@ -1,8 +1,6 @@
 using GameProject3.Abstracts.Combats;
 using GameProject3.Managers;
 using GameProject3.ScriptableObjects;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
